@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :api do
-    resources :some_model, :only => [:create, :show, :index]
+    resources :arduino_sensors, :only => [:create, :show, :index]
 
   end
   # The priority is based upon order of creation: first created -> highest priority.

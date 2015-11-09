@@ -11,13 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151108110946) do
+ActiveRecord::Schema.define(version: 20151109113044) do
 
-  create_table "some_models", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "arduino_sensors", force: :cascade do |t|
+    t.decimal  "ground_humidity"
+    t.decimal  "temperature"
+    t.integer  "pressure"
+    t.decimal  "nonrelative_asl"
+    t.decimal  "relative_asl"
+    t.decimal  "shakes"
+    t.boolean  "israining"
+    t.decimal  "air_humidity"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
