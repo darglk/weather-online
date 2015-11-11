@@ -20,6 +20,7 @@ gem 'pg', group: :production
 gem 'devise'
 gem 'rspec-rails'
 gem 'devise_token_auth'
+gem 'omniauth'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
