@@ -17,7 +17,7 @@ function formatData(data){
         output += "</tr>";
     }
     output+="</table>";
-
+    output+="<br /><br />"
     $('#data_content').html(output);
 }
 
