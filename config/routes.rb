@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
+  root 'arduino_sensors#index'
+  resources :arduino_sensors, :only => [:index]
   namespace :api do
     resources :arduino_sensors, :only => [:create, :show, :index]
 

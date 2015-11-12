@@ -7,8 +7,60 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to "Arduino Weather", root_path, class: "navbar-brand" %>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="#">Today</a></li>
+        <li><a href="#">Yesterday</a></li>
+        <li><a href="#">This Month</a></li>
+        <li><a href="#">This Year</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<%= yield %>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Arduino Weather</h1>
+    <p>This is a web page that is presenting data from arduino sensors.</p>
+  </div>
+  <div class="row">
+    <div class="col-sm-8" id="data_content">
 
+      <%= yield %>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading">Panel Header</div>
+          <div class="panel-body">
+              <form class="navbar-form">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search" name="q" id="city_name">
+                  <div class="input-group-btn">
+                    <button class="btn btn-default"  id="loadjson"><i class="glyphicon glyphicon-search"></i></button>
+                  </div>
+                </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <p class="navbar-text pull-left">© 2015 - Site Built By Darglk
+    </p>
+  </div>
+
+
+</div>
 </body>
 </html>
