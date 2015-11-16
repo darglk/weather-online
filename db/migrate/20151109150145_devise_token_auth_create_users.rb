@@ -32,4 +32,4 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration
   end
 end
 
-#curl -X POST -v -H 'Content-Type: application/json' http://localhost:3000/api/auth/sign_in -d '{"email": "ciprojektwimiip@gmail.com", "password": "AX1BY2CZ3" }'
+

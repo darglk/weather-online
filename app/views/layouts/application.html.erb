@@ -10,7 +10,8 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <%= link_to "Arduino Weather", root_path, class: "navbar-brand" %>
+
+      <%= link_to "Arduino Weather", root_path, class: "navbar-brand", onclick:"location.reload()" %>
     </div>
     <div>
       <ul class="nav navbar-nav">
@@ -30,14 +31,14 @@
   </div>
   <div class="row">
     <div class="col-sm-8" id="data_content">
-
+        <%= image_tag "loadingGif.gif", id: "loading_gif", hidden:"hidden" %>
       <%= yield %>
     </div>
 
     <div class="col-sm-4">
       <div class="panel-group">
         <div class="panel panel-default">
-          <div class="panel-heading">Panel Header</div>
+          <div class="panel-heading">Search for weather from any city around the world</div>
           <div class="panel-body">
               <form class="navbar-form">
                 <div class="input-group">
@@ -46,6 +47,7 @@
                     <button class="btn btn-default"  id="loadjson"><i class="glyphicon glyphicon-search"></i></button>
                   </div>
                 </div>
+                <h6>Powered by openweathermap API</h6>
               </form>
           </div>
         </div>

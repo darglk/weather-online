@@ -1,7 +1,7 @@
 class Api::ArduinoSensorsController < ApplicationController
-  #include DeviseTokenAuth::Concerns::SetUserByToken
+  include DeviseTokenAuth::Concerns::SetUserByToken
   respond_to :json
-  #before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!, only: [:create]
   def index
     respond_with ArduinoSensor.all
   end

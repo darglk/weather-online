@@ -18,16 +18,20 @@ function formatData(data){
     }
     output+="</table>";
     output+="<br /><br />"
+
     $('#data_content').html(output);
+    return false;
 }
 
 $(document).ready(function(){
     $("#loadjson").click(function(event) {
         var city = document.getElementById("city_name").value;
         var theUrl = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=2de143494c0b295cca9337e1e96b00e0";
-        event.preventDefault();
+
+        $("#loading_gif").show();
         $.get(theUrl, {}, function(data) {
             formatData(data);
         });
+        event.preventDefault();
     });
 });
