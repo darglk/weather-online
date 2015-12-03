@@ -1,0 +1,35 @@
+<table id="fixed_table">
+  <tr>
+    <td>Temp</td>
+    <td><%= data.temperature %><sup>o</sup>C</td>
+  </tr>
+  <tr>
+    <td>Ground humidity</td>
+    <td><%= data.ground_humidity %> %</td>
+  </tr>
+  <tr>
+    <td>Shakes</td>
+    <td><%= data.shakes %>%</td>
+  </tr>
+  <tr>
+    <td>Is raining</td>
+    <td><%= data.israining ? "Yes" : "No" %></td>
+  </tr>
+  <tr>
+    <td>Non-relative Above Sea Level</td>
+    <td><%= data.nonrelative_asl %>m</td>
+  </tr>
+  <tr>
+    <td>Relative Above Sea Level</td>
+    <td><%= data.relative_asl %>m</td>
+  </tr>
+  <tr>
+    <td>Pressure</td>
+    <td><%= data.pressure %>Pa</td>
+  </tr>
+  <tr>
+    <td>Air humidity</td>
+    <td><%= data.air_humidity %>%</td>
+  </tr>
+
+</table>

@@ -1,2 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#fixed_table{
+  @extend .table;
+  margin-bottom: 20px;
+}
+
+#data_content{
+  margin-bottom: 60px;
+}
