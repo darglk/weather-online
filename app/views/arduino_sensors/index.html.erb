@@ -1,1 +1,13 @@
-<%= render "results_table", data: @data %>
+<% @data.each do |data| %>
+    <div class="panel panel-default">
+        <div class="panel-heading">record from <%= data.created_at%>
+            <button data-toggle="collapse" class="btn btn-primary" data-target="#demo<%=data.id %>">Details</button>
+        </div>
+        <div class="panel-body">
+            <div id="demo<%=data.id %>" class="collapse">
+                <%= render "results_table", :data => data %>
+            </div>
+        </div>
+    </div>
+<% end %>
+<%= will_paginate @data, renderer: BootstrapPagination::Rails, :is_active => true %>

@@ -1,6 +1,34 @@
 class ArduinoSensorsController < ApplicationController
   def index
-    @data = ArduinoSensor.last
+    @data = ArduinoSensor.where(:created_at => Date.today).paginate(:page => params[:page])
+    
+  end
+
+  def yesterday
+    @data = ArduinoSensor.where(:created_at => Date.yesterday).paginate(:page => params[:page])
+    fetch_data(@data,"There are no records from yesterday.")
+
+  end
+
+  def this_month
+    @data = ArduinoSensor.where(:created_at => 1.month.ago..Time.now).paginate(:page => params[:page])
+    fetch_data(@data, "There are no records since last month")
+  end
+
+  def this_year
+    @data = ArduinoSensor.where(:created_at => 1.year.ago..Time.now).paginate(:page => params[:page])
+    fetch_data(@data, "There are no records since last year")
+  end
+
+  private
+
+  def fetch_data(data, alert)
+    unless data.empty?
+      render "arduino_sensors/index"
+    else
+      flash[:alert] = alert
+      redirect_to root_path
+    end
   end
 end
 
