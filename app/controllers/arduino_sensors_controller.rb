@@ -1,7 +1,7 @@
 class ArduinoSensorsController < ApplicationController
   def index
     @data = ArduinoSensor.where(:created_at => Date.today).paginate(:page => params[:page])
-    
+
   end
 
   def yesterday
