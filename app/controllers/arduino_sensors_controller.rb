@@ -5,12 +5,12 @@ class ArduinoSensorsController < ApplicationController
   end
 
   def today
-    @data = ArduinoSensor.where(:created_at => 1.minute.ago..Date.today).order(created_at: :desc).paginate(:page => params[:page])
+    @data = ArduinoSensor.where(:created_at => Date.today..Time.now).order(created_at: :desc).paginate(:page => params[:page])
     fetch_data(@data, "There are no records from today.")
   end
 
   def yesterday
-    @data = ArduinoSensor.where(:created_at => Date.yesterday).order(created_at: :desc).paginate(:page => params[:page])
+    @data = ArduinoSensor.where(:created_at => Date.yesterday..Time.now).order(created_at: :desc).paginate(:page => params[:page])
     fetch_data(@data,"There are no records from yesterday.")
 
   end
