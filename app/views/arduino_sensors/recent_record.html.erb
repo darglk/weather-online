@@ -1,0 +1,36 @@
+<p><b>The latest record: <%= @recent.created_at %></b></p>
+<table id="fixed_table">
+  <tr>
+    <td>Temp</td>
+    <td><%= @recent.temperature %><sup>o</sup>C</td>
+  </tr>
+  <tr>
+    <td>Ground humidity</td>
+    <td><%= @recent.ground_humidity %> %</td>
+  </tr>
+  <tr>
+    <td>Shakes</td>
+    <td><%= @recent.shakes %>%</td>
+  </tr>
+  <tr>
+    <td>Is raining</td>
+    <td><%= @recent.israining ? "Yes" : "No" %></td>
+  </tr>
+  <tr>
+    <td>Non-relative Above Sea Level</td>
+    <td><%= @recent.nonrelative_asl %>m</td>
+  </tr>
+  <tr>
+    <td>Relative Above Sea Level</td>
+    <td><%= @recent.relative_asl %>m</td>
+  </tr>
+  <tr>
+    <td>Pressure</td>
+    <td><%= @recent.pressure %>Pa</td>
+  </tr>
+  <tr>
+    <td>Air humidity</td>
+    <td><%= @recent.air_humidity %>%</td>
+  </tr>
+
+</table>

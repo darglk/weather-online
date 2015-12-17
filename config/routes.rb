@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     mount_devise_token_auth_for 'User', at: 'auth'
   end
 
+  get 'today' => 'arduino_sensors#today'
   get 'yesterday' => 'arduino_sensors#yesterday'
   get 'this_month' => 'arduino_sensors#this_month'
   get 'this_year' => 'arduino_sensors#this_year'

@@ -16,7 +16,7 @@
     </div>
     <div>
       <ul class="nav navbar-nav">
-        <li><%= link_to "Today", root_path %></li>
+        <li><%= link_to "Today", today_path %></li>
         <li><%= link_to "Yesterday", yesterday_path %></li>
         <li><%= link_to "Last Month", this_month_path %></li>
         <li><%= link_to "Last Year", this_year_path %></li>
@@ -29,6 +29,7 @@
   <div class="jumbotron">
     <h1>Arduino Weather</h1>
     <p>This is a web page that is presenting data from arduino sensors.</p>
+    <%= link_to  "Show The Latest Record", root_path,  class: "btn btn-info" %>
   </div>
   <div class="row">
     <div class="col-sm-8" id="data_content">
@@ -40,7 +41,7 @@
         <%= image_tag "loadingGif.gif", id: "loading_gif", hidden:"hidden" %>
       <%= yield %>
     </div>
-    
+
     <div class="col-sm-4">
       <div class="panel-group">
         <div class="panel panel-default">
