@@ -12,7 +12,7 @@
 
     <div class="navbar-header">
 
-      <%= link_to "Arduino Weather", root_path, class: "navbar-brand", onclick:"location.reload()" %>
+      <%= link_to "Arduino Weather", root_path, class: "navbar-brand" %>
     </div>
     <div>
       <ul class="nav navbar-nav">
@@ -29,7 +29,7 @@
   <div class="jumbotron">
     <h1>Arduino Weather</h1>
     <p>This is a web page that is presenting data from arduino sensors.</p>
-    <%= link_to  "Show The Latest Record", root_path,  class: "btn btn-info", onclick:"location.reload()" %>
+    <%= link_to  "Show The Latest Record", root_path,  class: "btn btn-info"%>
   </div>
   <div class="row">
     <div class="col-sm-8" id="data_content">
@@ -41,7 +41,7 @@
         <%= image_tag "loadingGif.gif", id: "loading_gif", hidden:"hidden" %>
       <%= yield %>
     </div>
-
+    <!--
     <div class="col-sm-4">
       <div class="panel-group">
         <div class="panel panel-default">
@@ -59,7 +59,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 
