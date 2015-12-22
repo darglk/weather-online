@@ -2,6 +2,23 @@ class Api::ArduinoSensorsController < ApplicationController
   include DeviseTokenAuth::Concerns::SetUserByToken
   respond_to :json
   before_action :authenticate_user!, only: [:create]
+
+  def today
+    respond_with ArduinoSensor.where(:created_at => Date.today..Time.now).order(created_at: :desc)
+  end
+
+  def yesterday
+    respond_with ArduinoSensor.where(:created_at => Date.yesterday..Time.now).order(created_at: :desc)
+  end
+
+  def this_month
+    respond_with ArduinoSensor.where(:created_at => 1.month.ago..Time.now).order(created_at: :desc)
+  end
+
+  def this_year
+    respond_with ArduinoSensor.where(:created_at => 1.year.ago..Time.now).order(created_at: :desc)
+  end
+
   def index
     respond_with ArduinoSensor.all
   end
